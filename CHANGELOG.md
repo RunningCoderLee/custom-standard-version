@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.0"></a>
+# 0.1.0 (2018-08-13)
+
+
+### Features
+
+* **init:** 从 4.4.0 版本抽取代码 https://github.com/conventional-changelog/standard-version ([9b39fda](https://github.com/RunningCoderLee/custom-standard-version/commit/9b39fda))
+* 新增 -p / --preset 命令行参数，支持自定义预设 ([118e98e](https://github.com/RunningCoderLee/custom-standard-version/commit/118e98e))
+
+
+
 <a name="4.4.0"></a>
 # [4.4.0](https://github.com/conventional-changelog/standard-version/compare/v4.3.0...v4.4.0) (2018-05-21)
 

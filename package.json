@@ -1,6 +1,6 @@
 {
   "name": "custom-standard-version",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "replacement for `npm version` with automatic CHANGELOG generation",
   "bin": "bin/cli.js",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conventional-changelog/standard-version.git"
+    "url": "git+https://github.com/RunningCoderLee/custom-standard-version.git"
   },
   "engines": {
     "node": ">=6.9.0"
