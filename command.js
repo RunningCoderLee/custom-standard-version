@@ -8,6 +8,13 @@ module.exports = require('yargs')
     requiresArg: true,
     string: true
   })
+  .option('preset', {
+    alias: 'P',
+    describe: 'Specify the preset manually (The string that is passed to the preset loader is manipulated by prepending conventional-changelog to the name. e.g. angular => conventional-changelog-angular)',
+    requiresArg: true,
+    string: true,
+    default: defaults.preset
+  })
   .option('prerelease', {
     alias: 'p',
     describe: 'make a pre-release with optional option value to specify a tag id',

@@ -1,5 +1,6 @@
 {
   "infile": "CHANGELOG.md",
+  "preset": "angular",
   "message": "chore(release): %s",
   "firstRelease": false,
   "sign": false,
