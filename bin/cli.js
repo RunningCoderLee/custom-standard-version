@@ -2,9 +2,14 @@
 var standardVersion = require('../index')
 var cmdParser = require('../command')
 
+var nodeVerArr = process.version.match(/v(\d+)\.(\d+)\./)
+var majorVer = nodeVerArr[1];
+var minorVer = nodeVerArr[2];
+var isInvalidVersion = majorVer < 6 || (Number(majorVer) === 6 && minorVer < 9)
 /* istanbul ignore if */
-if (process.version.match(/v(\d+)\./)[1] < 4) {
-  console.error('standard-version: Node v4 or greater is required. `standard-version` did not run.')
+
+if (isInvalidVersion) {
+  console.error('custom-standard-version: Node v6.9 or greater is required. `custom-standard-version` did not run.')
 } else {
   standardVersion(cmdParser.argv)
     .catch(() => {
