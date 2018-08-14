@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/RunningCoderLee/custom-standard-version.svg?branch=master)](https://travis-ci.org/RunningCoderLee/custom-standard-version)
 [![NPM version](https://img.shields.io/npm/v/custom-standard-version.svg)](https://www.npmjs.com/package/custom-standard-version)
-[![Coverage Status](https://coveralls.io/repos/github/RunningCoderLee/custom-standard-version/badge.svg)](https://coveralls.io/github/RunningCoderLee/custom-standard-version)
+[![Coverage Status](https://coveralls.io/repos/github/RunningCoderLee/custom-standard-version/badge.svg?branch=master)](https://coveralls.io/github/RunningCoderLee/custom-standard-version)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 
