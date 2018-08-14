@@ -3,8 +3,8 @@ var standardVersion = require('../index')
 var cmdParser = require('../command')
 
 var nodeVerArr = process.version.match(/v(\d+)\.(\d+)\./)
-var majorVer = nodeVerArr[1];
-var minorVer = nodeVerArr[2];
+var majorVer = nodeVerArr[1]
+var minorVer = nodeVerArr[2]
 var isInvalidVersion = majorVer < 6 || (Number(majorVer) === 6 && minorVer < 9)
 /* istanbul ignore if */
 

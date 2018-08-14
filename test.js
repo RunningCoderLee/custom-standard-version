@@ -38,7 +38,7 @@ function execCli (argString) {
 }
 
 function execCliAsync (argString) {
-  return standardVersion(cli.parse('standard-version ' + argString + ' --silent'))
+  return standardVersion(cli.parse('custom-standard-version ' + argString + ' --silent'))
 }
 
 function writePackageJson (version, option) {
@@ -261,7 +261,7 @@ describe('cli', function () {
     describe('prerelease hook', function () {
       it('should run the prerelease hook when provided', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'prerelease': 'node scripts/prerelease'
             }
@@ -278,7 +278,7 @@ describe('cli', function () {
 
       it('should abort if the hook returns a non-zero exit code', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'prerelease': 'node scripts/prerelease && exit 1'
             }
@@ -297,7 +297,7 @@ describe('cli', function () {
     describe('prebump hook', function () {
       it('should allow prebump hook to return an alternate version #', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'prebump': 'node scripts/prebump'
             }
@@ -316,7 +316,7 @@ describe('cli', function () {
     describe('postbump hook', function () {
       it('should run the postbump hook when provided', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'postbump': 'node scripts/postbump'
             }
@@ -333,7 +333,7 @@ describe('cli', function () {
 
       it('should run the postbump and exit with error when postbump fails', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'postbump': 'node scripts/postbump'
             }
@@ -352,7 +352,7 @@ describe('cli', function () {
     describe('precommit hook', function () {
       it('should run the precommit hook when provided', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'precommit': 'node scripts/precommit'
             }
@@ -369,7 +369,7 @@ describe('cli', function () {
 
       it('should run the precommit hook and exit with error when precommit fails', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'precommit': 'node scripts/precommit'
             }
@@ -386,7 +386,7 @@ describe('cli', function () {
 
       it('should allow an alternate commit message to be provided by precommit script', function () {
         writePackageJson('1.0.0', {
-          'standard-version': {
+          'custom-standard-version': {
             'scripts': {
               'precommit': 'node scripts/precommit'
             }
@@ -635,7 +635,7 @@ describe('cli', function () {
 
   it('exits with error code if "scripts" is not an object', () => {
     writePackageJson('1.0.0', {
-      'standard-version': {
+      'custom-standard-version': {
         scripts: 'echo hello'
       }
     })
@@ -648,7 +648,7 @@ describe('cli', function () {
 
   it('exits with error code if "skip" is not an object', () => {
     writePackageJson('1.0.0', {
-      'standard-version': {
+      'custom-standard-version': {
         skip: true
       }
     })
@@ -660,7 +660,7 @@ describe('cli', function () {
   })
 })
 
-describe('standard-version', function () {
+describe('custom-standard-version', function () {
   beforeEach(initInTempFolder)
   afterEach(finishTemp)
 
