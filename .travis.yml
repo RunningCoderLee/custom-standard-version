@@ -1,8 +1,24 @@
+sudo: false
 language: node_js
+branches:
+  only:
+  - "/^v\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+cache:
+  directories:
+  - node_modules
+notifications: false
 node_js:
-  - "6"
-  - "stable"
-before_script:
-  # - git config --global user.name 'Travis-CI'
-  # - git config --global user.email 'dummy@example.org'
+- '6'
+- stable
+before_install:
+- npm i -g npm
+before_script: 
+deploy:
+  provider: npm
+  email: sprint_l@aliyun.com
+  api_key:
+    secure: GD1pOft3IRUvaXwPuIJhCrWJuvdwbKzy++ag4gNEvbCCzZGNz5vhRFRttO8tn/Bh3B2uMwkdYrSjZL5Ki9MB0LR0J0JJDbksOPj4yh3Obsel1THhiCqRGrfsH7+pmmDPYC5YlWM0LJoRbfiMelZdqFULNfFq9mWi8UNPu546QwTNubP2XX4VzQoWr4fWDI0KLJ1T8KWdkoganPqNJSek5XpttEFn13+Q4wKdE+/f8huQ90Jec/3D8mYtcJO7FZb3j9NevG1afMaVgzkkVq8AM7UejapOk2kz8Mj0zsux1vVejB6TIp3ClzvZz+ai35Yeaf4Fw+MWMTaStiv3agswyIhltcpC9T9PqcccRbFHi7n15+foFrKPGjFuVfd9W/l9XufCv2RyCNpC1Y7M2blGo5cYhKD7iixjfm+BKYLsnSOUirAQC4NYgkEUHQ6pWnAqra796lVVjCgzMcVXU1Bc1EXAvWZgfxYnge5zkWnYbfMaNkktwEjIzLD30PyG09xkIM3hRg4IauV/jskxOeuDk37hB+twpCOHgrwds1i1hjax9dL2XCuTxO/By1KRDSeFxaExZqo4ziq5HOIhqiQybTY2Tj2posyuP1Wry6/cviWK/PMjwnTgUUCBzQvSk+qTPs9lHI9pWGGUIgoU7nQpxsggIx6RxD3Q42mX1dTQyc0=
+  on:
+    tags: true
+    repo: RunningCoderLee/custom-standard-version
 after_success: npm run coverage

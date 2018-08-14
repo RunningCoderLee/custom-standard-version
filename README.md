@@ -1,14 +1,12 @@
-# Standard Version
+# Custom Standard Version
 
-[![Build Status](https://travis-ci.org/conventional-changelog/standard-version.svg?branch=master)](https://travis-ci.org/conventional-changelog/standard-version)
-[![NPM version](https://img.shields.io/npm/v/standard-version.svg)](https://www.npmjs.com/package/standard-version)
-[![Coverage Status](https://coveralls.io/repos/conventional-changelog/standard-version/badge.svg?branch=)](https://coveralls.io/r/conventional-changelog/standard-version?branch=master)
+[![Build Status](https://travis-ci.org/RunningCoderLee/custom-standard-version.svg?branch=master)](https://travis-ci.org/conventional-changelog/standard-version)
+[![NPM version](https://img.shields.io/npm/v/custom-standard-version.svg)](https://www.npmjs.com/package/custom-standard-version)
+[![Coverage Status](https://coveralls.io/repos/github/RunningCoderLee/custom-standard-version/badge.svg?branch=master)](https://coveralls.io/github/RunningCoderLee/custom-standard-version?branch=master)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![community slack](http://devtoolscommunity.herokuapp.com/badge.svg)](http://devtoolscommunity.herokuapp.com)
 
-_Having problems? want to contribute? join our [community slack](http://devtoolscommunity.herokuapp.com)_.
 
-> stop using `npm version`, use `standard-version` it rocks!
+> stop using `npm version`, use `custom-standard-version` it rocks!
 
 Automatic versioning and CHANGELOG generation, using GitHub's squash button and
 [conventional commit messages](https://conventionalcommits.org).
@@ -19,10 +17,10 @@ _how it works:_
 2. add a title and body that follows the [Conventional Commits Specification](https://conventionalcommits.org).
 3. when you're ready to release to npm:
   1. `git checkout master; git pull origin master`
-  2. run `standard-version`
+  2. run `custom-standard-version`
   3. `git push --follow-tags origin master && npm publish`
 
-`standard-version` does the following:
+`custom-standard-version` does the following:
 
 1. bumps the version in _package.json/bower.json_ (based on your commit history)
 2. uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) to update _CHANGELOG.md_
@@ -36,7 +34,7 @@ _how it works:_
 Install and add to `devDependencies`:
 
 ```
-npm i --save-dev standard-version
+npm i --save-dev custom-standard-version
 ```
 
 Add an [`npm run` script](https://docs.npmjs.com/cli/run-script) to your _package.json_:
@@ -44,26 +42,26 @@ Add an [`npm run` script](https://docs.npmjs.com/cli/run-script) to your _packag
 ```json
 {
   "scripts": {
-    "release": "standard-version"
+    "release": "custom-standard-version"
   }
 }
 ```
 
 Now you can use `npm run release` in place of `npm version`.
 
-This has the benefit of making your repo/package more portable, so that other developers can cut releases without having to globally install `standard-version` on their machine.
+This has the benefit of making your repo/package more portable, so that other developers can cut releases without having to globally install `custom-standard-version` on their machine.
 
 ### As global bin
 
 Install globally (add to your `PATH`):
 
 ```
-npm i -g standard-version
+npm i -g custom-standard-version
 ```
 
-Now you can use `standard-version` in place of `npm version`.
+Now you can use `custom-standard-version` in place of `npm version`.
 
-This has the benefit of allowing you to use `standard-version` on any repo/package without adding a dev dependency to each one.
+This has the benefit of allowing you to use `custom-standard-version` on any repo/package without adding a dev dependency to each one.
 
 ## CLI Usage
 
@@ -75,7 +73,7 @@ To generate your changelog for your first release, simply do:
 # npm run script
 npm run release -- --first-release
 # or global bin
-standard-version --first-release
+custom-standard-version --first-release
 ```
 
 This will tag a release **without bumping the version in package.json (_et al._)**.
@@ -90,7 +88,7 @@ If you typically use `npm version` to cut a new release, do this instead:
 # npm run script
 npm run release
 # or global bin
-standard-version
+custom-standard-version
 ```
 
 As long as your git commit messages are conventional and accurate, you no longer need to specify the semver type - and you get CHANGELOG generation for free! \o/
@@ -146,16 +144,16 @@ If you use git hooks, like pre-commit, to test your code before committing, you 
 # npm run script
 npm run release -- --no-verify
 # or global bin
-standard-version --no-verify
+custom-standard-version --no-verify
 ```
 
 ### Signing commits and tags
 
-If you have your GPG key set up, add the `--sign` or `-s` flag to your `standard-version` command.
+If you have your GPG key set up, add the `--sign` or `-s` flag to your `custom-standard-version` command.
 
 ### Lifecycle scripts
 
-`standard-version` supports lifecycle scripts. These allow you to execute your
+`custom-standard-version` supports lifecycle scripts. These allow you to execute your
 own supplementary commands during the release. The following
 hooks are available and execute in the order documented:
 
@@ -164,7 +162,7 @@ hooks are available and execute in the order documented:
   process.
 * `prebump`/`postbump`: executed before and after the version is bumped. If the `prebump`
   script returns a version #, it will be used rather than
-  the version calculated by `standard-version`.
+  the version calculated by `custom-standard-version`.
 * `prechangelog`/`postchangelog`: executes before and after the CHANGELOG is generated.
 * `precommit`/`postcommit`: called before and after the commit step.
 * `pretag`/`posttag`: called before and after the tagging step.
@@ -186,7 +184,7 @@ As an example to change from using GitHub to track your items to using your proj
 with a link to your Jira - assuming you have already installed [replace](https://www.npmjs.com/package/replace)
 ```json
 {
-  "standard-version": {
+  "custom-standard-version": {
     "scripts": {
       "postchangelog": "replace 'https://github.com/myproject/issues/' 'https://myjira/browse/' CHANGELOG.md"
     }
@@ -201,7 +199,7 @@ by adding the following to your package.json:
 
 ```json
 {
-  "standard-version": {
+  "custom-standard-version": {
     "skip": {
       "changelog": true
     }
@@ -211,23 +209,23 @@ by adding the following to your package.json:
 
 ### Committing generated artifacts in the release commit
 
-If you want to commit generated artifacts in the release commit (e.g. [#96](https://github.com/conventional-changelog/standard-version/issues/96)), you can use the `--commit-all` or `-a` flag. You will need to stage the artifacts you want to commit, so your `release` command could look like this:
+If you want to commit generated artifacts in the release commit (e.g. [#96](https://github.com/conventional-changelog/custom-standard-version/issues/96)), you can use the `--commit-all` or `-a` flag. You will need to stage the artifacts you want to commit, so your `release` command could look like this:
 
 ```json
 "prerelease": "webpack -p --bail",
-"release": "git add <file(s) to commit> && standard-version -a"
+"release": "git add <file(s) to commit> && custom-standard-version -a"
 ```
 
 ### Dry run mode
 
-running `standard-version` with the flag `--dry-run` allows you to see what
+running `custom-standard-version` with the flag `--dry-run` allows you to see what
 commands would be run, without committing to git or updating files.
 
 ```sh
 # npm run script
 npm run release -- --dry-run
 # or global bin
-standard-version --dry-run
+custom-standard-version --dry-run
 ```
 
 ### CLI Help
@@ -236,16 +234,16 @@ standard-version --dry-run
 # npm run script
 npm run release -- --help
 # or global bin
-standard-version --help
+custom-standard-version --help
 ```
 
 ## Code usage
 
-Use the `silent` option to stop `standard-version` from printing anything
+Use the `silent` option to stop `custom-standard-version` from printing anything
 to the console.
 
 ```js
-var standardVersion = require('standard-version')
+var standardVersion = require('custom-standard-version')
 
 // Options are the same as command line, except camelCase
 standardVersion({
@@ -254,9 +252,9 @@ standardVersion({
   silent: true
 }, function (err) {
   if (err) {
-    console.error(`standard-version failed with message: ${err.message}`)
+    console.error(`custom-standard-version failed with message: ${err.message}`)
   }
-  // standard-version is done
+  // custom-standard-version is done
 })
 ```
 
@@ -304,15 +302,15 @@ Tell your users that you adhere to the Conventional Commits specification:
 
 ## FAQ
 
-### How is `standard-version` different from `semantic-release`?
+### How is `custom-standard-version` different from `semantic-release`?
 
 [`semantic-release`](https://github.com/semantic-release/semantic-release) is a fully automated library/system for versioning, changelog generation, git tagging, and publishing to the npm registry.
 
-`standard-version` is different because it handles the versioning, changelog generation, and git tagging for you **without** automatic pushing (to GitHub) or publishing (to an npm registry). Use of `standard-version` only affects your local git repo - it doesn't affect remote resources at all. After you run `standard-version`, you still have to ability to review things and correct mistakes if you want to.
+`custom-standard-version` is different because it handles the versioning, changelog generation, and git tagging for you **without** automatic pushing (to GitHub) or publishing (to an npm registry). Use of `custom-standard-version` only affects your local git repo - it doesn't affect remote resources at all. After you run `custom-standard-version`, you still have to ability to review things and correct mistakes if you want to.
 
-They are both based on the same foundation of structured commit messages (using [Angular format](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md)), but `standard-version` is a good choice for folks who are not yet comfortable letting publishes go out automatically. In this way, you can view `standard-version` as an incremental step to adopting `semantic-release`.
+They are both based on the same foundation of structured commit messages (using [Angular format](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md)), but `custom-standard-version` is a good choice for folks who are not yet comfortable letting publishes go out automatically. In this way, you can view `custom-standard-version` as an incremental step to adopting `semantic-release`.
 
-We think they are both fantastic tools, and we encourage folks to use `semantic-release` instead of `standard-version` if it makes sense for them.
+We think they are both fantastic tools, and we encourage folks to use `semantic-release` instead of `custom-standard-version` if it makes sense for them.
 
 ### Should I always squash commits when merging PRs?
 
