@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/RunningCoderLee/custom-standard-version/compare/v0.1.0...v0.1.1) (2018-08-14)
+
+
+### Bug Fixes
+
+* **command:** 更改 package.json 中读取配置的 key 名 ([1be0d1c](https://github.com/RunningCoderLee/custom-standard-version/commit/1be0d1c))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2018-08-13)
 
