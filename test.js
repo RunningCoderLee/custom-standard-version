@@ -153,7 +153,7 @@ describe('cli', function () {
 
   describe('CHANGELOG.md exists', function () {
     it('appends the new release above the last release, removing the old header', function () {
-      fs.writeFileSync('CHANGELOG.md', 'legacy header format<a name="1.0.0">\n', 'utf-8')
+      fs.writeFileSync('CHANGELOG.md', 'legacy header format<br />\n', 'utf-8')
 
       commit('feat: first commit')
       shell.exec('git tag -a v1.0.0 -m "my awesome first release"')
@@ -166,7 +166,7 @@ describe('cli', function () {
     })
 
     it('commits all staged files', function () {
-      fs.writeFileSync('CHANGELOG.md', 'legacy header format<a name="1.0.0">\n', 'utf-8')
+      fs.writeFileSync('CHANGELOG.md', 'legacy header format<br />\n', 'utf-8')
 
       commit('feat: first commit')
       shell.exec('git tag -a v1.0.0 -m "my awesome first release"')
