@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/RunningCoderLee/custom-standard-version/compare/v0.1.1...v0.2.0) (2018-08-15)
+
+
+### Features
+
+* **全局:** 汉化 CHANGELOG 头部的说明内容，更换位置标记内容 ([9dd0fec](https://github.com/RunningCoderLee/custom-standard-version/commit/9dd0fec))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/RunningCoderLee/custom-standard-version/compare/v0.1.0...v0.1.1) (2018-08-14)
 
